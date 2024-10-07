@@ -16,8 +16,8 @@ def input_letter() -> str:
     """enter a single letter"""
     letter: str = input("Enter a single character: ")
     if len(letter) != 1:
-        print("Error: Character must a single character.")
         exit()
+        print("Error: Character must a single character.")
     return letter
 
 
@@ -31,7 +31,6 @@ def contains_char(word: str, letter: str) -> None:
             print(str(letter) + "found at index" + str(index))
             count += 1
         index += 1
-
     if count == 0:
         print("No instances of" + str(letter) + "found in" + str(word))
     elif count == 1:
@@ -42,7 +41,13 @@ def contains_char(word: str, letter: str) -> None:
 
 def main() -> None:
     """main function for Chardle game"""
-    contains_char(word=input_word(), letter=input_letter())
+    word = input_word()
+    if len(word) != 5:
+        return
+    letter = input_letter()
+    if len(letter) != 1:
+        return
+    contains_char(word, letter)
 
 
 if __name__ == "__main__":
