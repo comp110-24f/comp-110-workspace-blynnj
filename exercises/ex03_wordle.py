@@ -1,11 +1,10 @@
 """Making a wordle game!"""
 
-author: str = "730749523"
+__author__: str = "730749523"
 
 
 def input_guess(secret_word_len: int) -> str:
-    """user inputs words until it matches the length requriement"""
-    guess = input(f"Enter a {secret_word_len} charcter word:")
+    guess = input(f"Enter a {secret_word_len} charcter word: ")
     while len(guess) != secret_word_len:  # loops until the guess if the right length
         guess = input(f"That wasn't {secret_word_len} chars! Try again: ")
     return guess
