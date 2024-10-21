@@ -25,14 +25,23 @@ def max(input: list[int]) -> int:
     return max_number
 
 
-def is_eqaul(a_list: list[int], b_list: list[int]) -> bool:
-    """determine if lists are equal or not"""
-    if len(a_list) != len(b_list):  # lists can't be equal if they are different lengths
-        return False
-    for i in range(len(a_list)):
-        if a_list[i] != b_list[i]:
-            return False  # if any items in lists are different, return false
-    return True
+def is_equal(list1: list[int], list2: list[int]) -> bool:
+    """check if two lists are deeply equal."""
+
+    if len(list1) == 0 and len(list2) == 0:
+        return True  # bth lists are empty
+
+    if len(list1) == 0 or len(list2) == 0:
+        return False  # one list is empty, the other is not
+
+    if len(list1) != len(list2):
+        return False  # lists have different lengths
+
+    for i in range(len(list1)):
+        if list1[i] != list2[i]:
+            return False  # return False if any elements are different
+
+    return True  # lists are equal
 
 
 def extend(list1: list[int], list2: list[int]) -> None:
